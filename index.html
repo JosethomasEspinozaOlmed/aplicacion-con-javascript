@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cliente</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      background-color: #f7f7f7;
+    }
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      max-width: 400px;
+    }
+    input {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 4px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Cliente</h1>
+    <p>Ingresa el nombre del cliente y presiona Mostrar.</p>
+    <input id="clienteNombre" type="text" placeholder="Nombre del cliente" />
+    <button id="mostrarBtn">Mostrar nombre</button>
+    <div id="resultado" class="result"></div>
+  </div>
+
+  <script>
+    const inputNombre = document.getElementById('clienteNombre');
+    const botonMostrar = document.getElementById('mostrarBtn');
+    const resultado = document.getElementById('resultado');
+
+    botonMostrar.addEventListener('click', () => {
+      const nombre = inputNombre.value.trim();
+      if (!nombre) {
+        resultado.textContent = 'Por favor ingresa un nombre de cliente.';
+        resultado.style.color = '#b00020';
+        return;
+      }
+      resultado.textContent = `Nombre del cliente: ${nombre}`;
+      resultado.style.color = '#333';
+    });
+  </script>
+</body>
+</html>
